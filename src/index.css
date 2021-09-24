@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form-label {
+    @apply text-black text-opacity-70 font-medium text-base;
+}
+
+.form-input {
+    @apply p-3 text-black text-opacity-50 font-normal text-base border border-gray-400 rounded;
+}
+
+.button-green {
+    @apply bg-green-500 border border-green-500 text-white rounded hover:bg-white hover:text-green-500 transition-all duration-200;
+}
