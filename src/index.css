@@ -21,3 +21,11 @@
 .router-link-active {
     @apply bg-green-500 text-white text-opacity-80 shadow-sm;
 }
+
+table tbody tr {
+    @apply border-b border-gray-200;
+}
+
+table tr td {
+    @apply text-center p-5;
+}
