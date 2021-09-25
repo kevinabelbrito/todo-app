@@ -21,7 +21,11 @@ const routes = [
         children: [
             { path: '/dashboard', name: 'Dashboard', component: Dashboard }
         ]
-    }
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        redirect: "/"
+    },
 ]
 
 export default routes;
