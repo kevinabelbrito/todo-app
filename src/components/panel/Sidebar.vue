@@ -13,7 +13,7 @@
                 Inicio
             </router-link>
             <router-link
-                to="/usuarios"
+                to="/users"
                 tag="li"
                 class="sidebar-option"
             >
@@ -21,7 +21,7 @@
                 Usuarios
             </router-link>
             <router-link
-                to="/tareas"
+                to="/tasks"
                 tag="li"
                 class="sidebar-option"
             >

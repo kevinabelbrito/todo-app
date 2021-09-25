@@ -4,6 +4,7 @@ import PanelTemplate from '../components/templates/PanelTemplate.vue'
 // View Components
 import Login from '../components/auth/Login.vue'
 import Dashboard from '../components/panel/Dashboard.vue'
+import Users from '../components/panel/Users.vue'
 
 const routes = [
     {
@@ -19,7 +20,8 @@ const routes = [
         name: 'PanelTemplate',
         component: PanelTemplate,
         children: [
-            { path: '/dashboard', name: 'Dashboard', component: Dashboard }
+            { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+            { path: '/users', name: 'Users', component: Users }
         ]
     },
     {
