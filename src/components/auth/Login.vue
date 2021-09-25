@@ -1,8 +1,5 @@
 <template>
     <div>
-        <div class="logo">
-            <img src="https://a.storyblok.com/f/112226/x/bd86c3c034/logo.svg" class="mx-auto" width="150">
-        </div>
         <h1 class="text-green-500 text-base font-bold text-center my-3">
             To-do app
         </h1>
@@ -56,6 +53,7 @@ export default {
     methods: {
         login() {
             console.log(this.fields)
+            this.$router.push({ name: 'Dashboard' })
         }
     },
 }
