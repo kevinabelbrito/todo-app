@@ -1,10 +1,11 @@
 // Template Components
-import AuthTemplate from '../components/templates/AuthTemplate.vue'
-import PanelTemplate from '../components/templates/PanelTemplate.vue'
+import AuthTemplate from '@/components/templates/AuthTemplate.vue'
+import PanelTemplate from '@/components/templates/PanelTemplate.vue'
 // View Components
-import Login from '../components/auth/Login.vue'
-import Dashboard from '../components/panel/Dashboard.vue'
-import Users from '../components/panel/Users.vue'
+import Login from '@/components/auth/Login.vue'
+import Dashboard from '@/components/panel/Dashboard.vue'
+import Users from '@/components/panel/Users.vue'
+import Tasks from '@/components/panel/Tasks.vue'
 
 const routes = [
     {
@@ -21,7 +22,8 @@ const routes = [
         component: PanelTemplate,
         children: [
             { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-            { path: '/users', name: 'Users', component: Users }
+            { path: '/users', name: 'Users', component: Users },
+            { path: '/tasks', name: 'Tasks', component: Tasks }
         ]
     },
     {
