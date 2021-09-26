@@ -52,7 +52,6 @@ import useVuelidate from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
 export function validPassword(password) {
   let validPasswordPattern = new RegExp("^[a-zA-Z0-9]+(?:[-'\\s][a-zA-Z0-9]+)*$");
-  console.log(validPasswordPattern.test(password))
   if (validPasswordPattern.test(password)){
     return true;
   }
@@ -83,7 +82,10 @@ export default {
     },
     methods: {
         login() {
-            alert("Login successfully")
+            this.$store.dispatch("retrieveToken", {
+                email: this.email,
+                password: this.password
+            })
             this.$router.push({ name: 'Dashboard' })
         }
     },
