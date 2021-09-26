@@ -1,7 +1,29 @@
-# Vue 3 + Vite
+### Setup
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+```
+npm install
+```
 
-## Recommended IDE Setup
+### Run
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+```
+npm run dev
+```
+
+### Build
+
+```
+npm run build
+```
+
+### Flujo de git utilizado
+
+Git flow
+
+### ¿Como entrar al panel?
+
+Es muy sencillo, solamente hace falta colocar cualquier correo y contraseña cumpliendo las validaciones exigidas y se creará un token ficticio.
+
+### ¿Como salir?
+
+Arriba a la derecha en el panel hay un botón que indica la salida (Cierre de sesión)
