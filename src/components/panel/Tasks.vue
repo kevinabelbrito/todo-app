@@ -87,6 +87,10 @@ export default {
     },
     methods: {
         createTask() {
+            if(this.currentTask.name.length == 0) {
+                alert("Debe indicar una tarea que hacer")
+                return
+            }
             this.tasks.push({
                 id: parseInt(Math.random() * 100),
                 name: this.currentTask.name,

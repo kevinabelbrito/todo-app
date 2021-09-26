@@ -1,7 +1,10 @@
 <template>
     <div class="bg-green-800 text-white min-h-screen">
-        <div class="p-5">
-            <img src="https://a.storyblok.com/f/112226/x/bd86c3c034/logo.svg" class="mx-auto" width="150">
+        <div class="p-5 text-center">
+            <img src="@assets/img/logo_short.svg" class="inline-block" width="30">
+            <span class="text-lg text-white font-semibold ml-3 tracking-wider uppercase">
+                Mi Águila
+            </span>
         </div>
         <ul>
             <router-link
