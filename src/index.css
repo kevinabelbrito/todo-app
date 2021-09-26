@@ -29,3 +29,11 @@ table tbody tr {
 table tr td {
     @apply text-center p-5;
 }
+
+.error .form-input {
+    @apply border border-red-500;
+}
+
+.error .input-errors {
+    @apply text-red-500 text-xs font-light
+}

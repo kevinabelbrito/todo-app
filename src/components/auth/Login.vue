@@ -6,7 +6,7 @@
         <form
             @submit.prevent="login"
         >
-            <div class="my-5">
+            <div class="my-5" :class="{ error: v$.email.$errors.length }">
                 <label for="email" class="form-label">
                     E-Mail
                 </label>
@@ -14,10 +14,13 @@
                     type="email"
                     class="form-input block w-full my-3"
                     id="email"
-                    v-model="fields.email"
+                    v-model="v$.email.$model"
                 >
+                <div class="input-errors" v-for="error of v$.email.$errors" :key="error.$uid">
+                    <div class="error-msg">{{ error.$message }}</div>
+                </div>
             </div>
-            <div class="my-5">
+            <div class="my-5" :class="{ error: v$.password.$errors.length }">
                 <label for="password" class="form-label">
                     Password
                 </label>
@@ -25,13 +28,17 @@
                     type="password"
                     class="form-input block w-full my-3"
                     id="password"
-                    v-model="fields.password"
+                    v-model="v$.password.$model"
                 >
+                <div class="input-errors" v-for="error of v$.password.$errors" :key="error.$uid">
+                    <div class="error-msg">{{ error.$message }}</div>
+                </div>
             </div>
             <div class="my-5">
                 <button
                     type="submit"
                     class="button-green block w-full p-3"
+                    :disabled="v$.$invalid"
                 >
                     Log In
                 </button>
@@ -41,18 +48,42 @@
 </template>
 
 <script>
+import useVuelidate from '@vuelidate/core'
+import { required, email, minLength } from '@vuelidate/validators'
+export function validPassword(password) {
+  let validPasswordPattern = new RegExp("^[a-zA-Z0-9]+(?:[-'\\s][a-zA-Z0-9]+)*$");
+  console.log(validPasswordPattern.test(password))
+  if (validPasswordPattern.test(password)){
+    return true;
+  }
+  return false;
+}
 export default {
+    setup () {
+        return { v$: useVuelidate() }
+    },
     data() {
         return {
-            fields: {
-                email: '',
-                password: ''
+            email: '',
+            password: ''
+        }
+    },
+    validations() {
+        return {
+            email: { required, email },
+            password: {
+                required,
+                min: minLength(7),
+                pass_validation: {
+                    $validator: validPassword,
+                    $message: 'El password debe contener al menos un numero y una letra Mayuscula'
+                }
             }
         }
     },
     methods: {
         login() {
-            console.log(this.fields)
+            alert("Login successfully")
             this.$router.push({ name: 'Dashboard' })
         }
     },
